@@ -20,7 +20,7 @@ import com.cards.fullstack.service.UserService;
 import java.util.*;
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins="https://hopeful-agnesi-3ee381.netlify.com")
 @RequestMapping("/users")
 public class UserController {
 	
