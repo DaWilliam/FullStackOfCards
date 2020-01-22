@@ -1,6 +1,8 @@
 package com.cards.fullstack.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 public class FlashCard {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	private String question;
@@ -17,6 +20,11 @@ public class FlashCard {
 	private String resourceLink;
 		
 	private int userId;
+	
+	public FlashCard()
+	{
+		
+	}
 	
 	public FlashCard(int id, String question, String answer, String resourceName, String resourceLink, int userId) {
 		this.id = id;
