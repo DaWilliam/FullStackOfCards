@@ -1,12 +1,14 @@
 package com.cards.fullstack.models;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Document(collection="users")
+@Entity
+@Table(name="users_data")
 public class User {
 	@Id
-	private String id;
+	private int id;
 	private String username;
 	private String password;
 		
@@ -16,10 +18,10 @@ public class User {
 		this.password = password;
 	}
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getUsername() {

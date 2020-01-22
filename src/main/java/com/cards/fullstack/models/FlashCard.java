@@ -1,21 +1,26 @@
 package com.cards.fullstack.models;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Document(collection="flashcards")
+
+@Entity
+@Table(name="flashcards")
 public class FlashCard {
 	
 	@Id
-	private String id;
+	private int id;
+	
 	private String question;
 	private String answer;
 	private String resourceName;
 	private String resourceLink;
 		
-	private String userId;
+	private int userId;
 	
-	public FlashCard(String question, String answer, String resourceName, String resourceLink, String userId) {
+	public FlashCard(int id, String question, String answer, String resourceName, String resourceLink, int userId) {
+		this.id = id;
 		this.question = question;
 		this.answer = answer;
 		this.resourceName = resourceName;
@@ -23,18 +28,18 @@ public class FlashCard {
 		this.userId = userId;
 	}
 	
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getQuestion() {

@@ -24,7 +24,7 @@ public class FlashCardService {
 	//	Adds a flash card to the database. Can also be used to update? If given the same id.
 	public FlashCard addFlashCard(FlashCard flashCard)
 	{	
-		return flashCardRepo.insert(flashCard);
+		return flashCardRepo.save(flashCard);
 	}
 	
 	//	Removes a flash card by id from the database

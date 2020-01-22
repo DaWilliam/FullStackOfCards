@@ -2,11 +2,13 @@ package com.cards.fullstack.repositories;
 
 import java.util.List;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.cards.fullstack.models.FlashCard;
 
-public interface FlashCardRepository extends MongoRepository<FlashCard, String> {
+@Repository
+public interface FlashCardRepository extends JpaRepository<FlashCard, String> {
 
 	public List<FlashCard> findByUserId(String userId);
 }
