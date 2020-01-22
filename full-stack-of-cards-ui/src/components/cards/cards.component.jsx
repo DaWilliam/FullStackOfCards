@@ -36,9 +36,9 @@ class Cards extends React.Component {
 
     pickCard = () => {
         let card = new Card();
-        do {
+        while (this.state.finishedCards.includes(card.id)) {
             card = this.state.cards[Math.floor(Math.random()*this.state.cards.length)];
-        } while (this.state.finishedCards.includes(card.id));
+        } 
         card.showAnswer = false;
         this.setState({flashCard:card, status:'done'});
     }
