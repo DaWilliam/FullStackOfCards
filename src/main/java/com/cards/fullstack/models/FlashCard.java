@@ -14,7 +14,6 @@ public class FlashCard {
 	
 	private String question;
 	private String answer;
-	private String resourceName;
 	private String resourceLink;
 		
 	private int userId;
@@ -23,7 +22,6 @@ public class FlashCard {
 		this.id = id;
 		this.question = question;
 		this.answer = answer;
-		this.resourceName = resourceName;
 		this.resourceLink = resourceLink;
 		this.userId = userId;
 	}
@@ -53,12 +51,6 @@ public class FlashCard {
 	}
 	public void setAnswer(String answer) {
 		this.answer = answer;
-	}
-	public String getResourceName() {
-		return resourceName;
-	}
-	public void setResourceName(String resourceName) {
-		this.resourceName = resourceName;
 	}
 	public String getResourceLink() {
 		return resourceLink;
