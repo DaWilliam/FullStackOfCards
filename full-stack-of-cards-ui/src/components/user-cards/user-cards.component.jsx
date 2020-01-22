@@ -21,7 +21,14 @@ class UserCards extends React.Component
 
     getCards = () => {
         console.log("Gettin New Cards");
-        Axios.get('https://fullstackofcards.herokuapp.com/flashcards/getUserCards', {params: {userId : localStorage.getItem('user-id')}})
+        Axios.get('https://fullstackofcards.herokuapp.com/flashcards/getUserCards', {params: {userId : localStorage.getItem('user-id')}},
+            {
+            headers : { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+             }
+      
+          })
         .then(data => {            
             return JSON.parse(data.request.response);
         })
