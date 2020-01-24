@@ -21,7 +21,7 @@ import com.cards.fullstack.models.FlashCard;
 import java.util.*;
 
 @RestController
-@CrossOrigin (origins = "*")//(origins = "https://hopeful-agnesi-3ee381.netlify.com")
+@CrossOrigin (origins = "https://hopeful-agnesi-3ee381.netlify.com")
 @RequestMapping("/flashcards")
 public class FlashCardController {
 
@@ -56,7 +56,7 @@ public class FlashCardController {
 	}
 	
 	@DeleteMapping("/removeCard/{id}")
-	public ResponseEntity removeCard(@PathVariable("id") String id)
+	public ResponseEntity removeCard(@PathVariable int id)
 	{
 		flashCardService.removeFlashCard(id);
 		return new ResponseEntity(HttpStatus.OK);

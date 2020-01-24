@@ -21,7 +21,7 @@ class UserCards extends React.Component
 
     getCards = () => {
         console.log("Gettin New Cards");
-        Axios.get('https://fullstackofcards.herokuapp.com/flashcards/getUserCards', {params: {userId : localStorage.getItem('user-id')}},
+        Axios.get('http://localhost:8080/flashcards/getUserCards', {params: {userId : localStorage.getItem('user-id')}},
             {
             headers : { 
               'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ class UserCards extends React.Component
     }
     
     deleteCard = (id) => {
-        Axios.delete('https://fullstackofcards.herokuapp.com/flashcards/removeCard/'+ id, {data: "Data"}).then(this.getCards()).catch(error => console.log("Error deleting cards"));
+        Axios.delete('http://localhost:8080/flashcards/removeCard/'+ id).then(data => this.getCards()).catch(error => console.log("Error deleting cards"));
         
         //this.setState({count : this.state.count - 1})
     }

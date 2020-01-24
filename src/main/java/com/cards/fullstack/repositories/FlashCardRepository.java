@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.cards.fullstack.models.FlashCard;
 
 @Repository
-public interface FlashCardRepository extends JpaRepository<FlashCard, String> {
+public interface FlashCardRepository extends JpaRepository<FlashCard, Integer> {
 
 	public List<FlashCard> findByUserId(int userId);
 }
