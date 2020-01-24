@@ -21,7 +21,7 @@ import com.cards.fullstack.models.FlashCard;
 import java.util.*;
 
 @RestController
-@CrossOrigin (origins = "https://hopeful-agnesi-3ee381.netlify.com")
+@CrossOrigin (origins = "https://fullstackofcards.netlify.com")
 @RequestMapping("/flashcards")
 public class FlashCardController {
 
