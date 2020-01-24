@@ -39,7 +39,7 @@ public class FlashCardService {
 		return flashCardRepo.findAll();
 	}
 	
-	public List<FlashCard> getFlashCardsByUserId(String userId)
+	public List<FlashCard> getFlashCardsByUserId(int userId)
 	{
 		return flashCardRepo.findByUserId(userId);
 	}

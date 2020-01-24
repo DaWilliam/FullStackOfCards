@@ -10,5 +10,5 @@ import com.cards.fullstack.models.FlashCard;
 @Repository
 public interface FlashCardRepository extends JpaRepository<FlashCard, String> {
 
-	public List<FlashCard> findByUserId(String userId);
+	public List<FlashCard> findByUserId(int userId);
 }

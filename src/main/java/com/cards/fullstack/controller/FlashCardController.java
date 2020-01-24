@@ -50,7 +50,7 @@ public class FlashCardController {
 	}
 	
 	@GetMapping("/getUserCards")
-	public ResponseEntity<List<FlashCard>> getUserCards(@RequestParam("userId") String userId)
+	public ResponseEntity<List<FlashCard>> getUserCards(@RequestParam("userId") int userId)
 	{
 		return new ResponseEntity<List<FlashCard>>(flashCardService.getFlashCardsByUserId(userId), HttpStatus.OK);
 	}
