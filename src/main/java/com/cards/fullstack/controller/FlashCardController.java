@@ -56,7 +56,7 @@ public class FlashCardController {
 	}
 	
 	@DeleteMapping("/removeCard/{id}")
-	public ResponseEntity removeCard(@PathVariable String id)
+	public ResponseEntity removeCard(@PathVariable("id") String id)
 	{
 		flashCardService.removeFlashCard(id);
 		return new ResponseEntity(HttpStatus.OK);

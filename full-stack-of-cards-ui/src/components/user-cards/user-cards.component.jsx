@@ -41,7 +41,7 @@ class UserCards extends React.Component
     }
     
     deleteCard = (id) => {
-        Axios.delete('https://fullstackofcards.herokuapp.com/flashcards/removeCard/'+ id).then(data => this.getCards());
+        Axios.delete('https://fullstackofcards.herokuapp.com/flashcards/removeCard/'+ id, {data: "Data"}).then(this.getCards()).catch(error => console.log("Error deleting cards"));
         
         //this.setState({count : this.state.count - 1})
     }
