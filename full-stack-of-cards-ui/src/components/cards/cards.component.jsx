@@ -36,7 +36,7 @@ class Cards extends React.Component {
 
     pickCard = () => {
         let card = new Card();
-        if (cards.length != 0)
+        if (this.state.cards.length != 0)
         {
             card = this.state.cards[Math.floor(Math.random()*this.state.cards.length)]          //  Initializes a randomc card
             while (this.state.finishedCards.includes(card.id)) {                                //  If this was already found. 
@@ -44,6 +44,7 @@ class Cards extends React.Component {
             }
         } else                                                                                  //  If there are no cards. Create a fake one. 
         {
+            card.id = -1;
             card.question = "Why are there no questions?"
             card.answer = "Because no one added cards yet. Be the first to register and add a card!"
         }
