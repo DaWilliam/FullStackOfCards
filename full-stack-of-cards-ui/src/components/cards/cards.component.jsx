@@ -21,25 +21,33 @@ class Cards extends React.Component {
         } else {
             document.getElementsByClassName('cards')[0].classList.remove('fadein');
         }
-        Axios.get('https://fullstackofcards.herokuapp.com/flashcards/getCards')
+        Axios.get('https://fullstackofcards.herokuapp.com/flashcards/getCards') //  Gets all the cards
         .then(data => {
-            return JSON.parse(data.request.response);
+            return JSON.parse(data.request.response);   //  Parses the cards List
         })
         .then(cards => {
-            this.setState({cards:cards}, () => {
-                this.pickCard();
+            this.setState({cards:cards}, () => {    //  Sets the cards property of this state to the cards list we got.
+                this.pickCard();                    //  Also pass in a callback function that will happen after set state which will select a card.
             });
-        }).catch(error => {
+        }).catch(error => {                         //  Standard error
             console.log(error)
         })
     }
 
     pickCard = () => {
         let card = new Card();
-        while (this.state.finishedCards.includes(card.id)) {
-            card = this.state.cards[Math.floor(Math.random()*this.state.cards.length)];
-        } 
-        card.showAnswer = false;
+        if (cards.length != 0)
+        {
+            card = this.state.cards[Math.floor(Math.random()*this.state.cards.length)]          //  Initializes a randomc card
+            while (this.state.finishedCards.includes(card.id)) {                                //  If this was already found. 
+                card = this.state.cards[Math.floor(Math.random()*this.state.cards.length)];     //  Loop for another card
+            }
+        } else                                                                                  //  If there are no cards. Create a fake one. 
+        {
+            card.question = "Why are there no questions?"
+            card.answer = "Because no one added cards yet. Be the first to register and add a card!"
+        }
+        card.showAnswer = false;                                                            //  
         this.setState({flashCard:card, status:'done'});
     }
 
